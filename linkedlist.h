@@ -28,6 +28,16 @@ class LinkedList{
                 node = node->getPrev();
             }
         }
+        // updates the value of the first node with a given value
+        void updateValue(int val, int newVal){ 
+            Node *node = head;
+            while (node->getVal() != val && node->getNext() != NULL){
+                node = node->getNext();
+            }
+            if (node->getVal() == val){
+                node->setVal(newVal);
+            }
+        }
         // pushes a value to the start of the linked list
         void pushStart(int val){
             Node *newNode = new Node(val, NULL, head);
